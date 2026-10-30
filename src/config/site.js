@@ -10,8 +10,8 @@ export const SITE_CONFIG = {
   linkedin: "https://linkedin.com/in/brenzprof",
   facebook: "https://facebook.com/yokaingen",
   
-  // Paste your Google Appointment Schedule link here (e.g. https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ...)
-  googleCalendarScheduleUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules",
+  // Live Google Appointment Schedule link
+  googleCalendarScheduleUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1BRunpmnOOXvkAQC95ffWcHwHA35kdY7Y5Vlp_llx4r7BXctYePz0kLAuXNOeL4VXzR4Ec3ohj",
 
   stats: [
     { label: "Client Systems", value: "8+" },

@@ -20,7 +20,7 @@ function StatementFold() {
 
   return (
     <section 
-      className="relative w-full overflow-hidden bg-[#0A0C0E] border-b border-[rgba(237,231,220,0.13)] px-6 md:px-16 pt-16 md:pt-20 pb-20 md:pb-28"
+      className="relative w-full overflow-hidden bg-[#0A0C0E] border-b border-[rgba(237,231,220,0.13)] px-6 md:px-16 pt-12 md:pt-16 pb-16 md:pb-24"
     >
       {/* Background outlined index numeral using -webkit-text-stroke */}
       <div 
