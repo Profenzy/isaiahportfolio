@@ -1,20 +1,90 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: "Syne", sans-serif;
+  --font-sans: "Sora", sans-serif;
+
+  --color-ground: #0A0C0E;
+  --color-secondary-ground: #101317;
+  --color-ink: #EDE7DC;
+  --color-secondary-ink: #9EA5A8;
+  --color-muted: #6C7378;
+  --color-amber: #E8913C;
+  --color-teal: #2E6B72;
+  --color-hairline: rgba(237, 231, 220, 0.13);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0A0C0E;
+  color: #EDE7DC;
+}
+
 body {
-    font-family: "Inter", sans-serif;
-  }
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .fade-up {
-    animation: fadeUp 0.7s ease forwards;
-  }
-  
+  font-family: var(--font-sans);
+  background-color: #0A0C0E;
+  color: #EDE7DC;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings in Syne */
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+/* Neutral sans small type with wide tracking */
+.label-caps {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Hairline rule borders */
+.hairline-border {
+  border: 1px solid rgba(237, 231, 220, 0.13);
+}
+.hairline-b {
+  border-bottom: 1px solid rgba(237, 231, 220, 0.13);
+}
+.hairline-t {
+  border-top: 1px solid rgba(237, 231, 220, 0.13);
+}
+.hairline-r {
+  border-right: 1px solid rgba(237, 231, 220, 0.13);
+}
+.hairline-l {
+  border-left: 1px solid rgba(237, 231, 220, 0.13);
+}
+
+/* Outlined index numeral using -webkit-text-stroke */
+.text-stroke-numeral {
+  -webkit-text-stroke: 1.5px rgba(237, 231, 220, 0.22);
+  color: transparent;
+  font-family: var(--font-display);
+}
+
+/* Only deck cards are permitted drop shadows */
+.deck-card-shadow {
+  box-shadow: 0 18px 45px -10px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(237, 231, 220, 0.15);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0C0E;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(237, 231, 220, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8913C;
+}

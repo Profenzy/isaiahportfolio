@@ -22,3 +22,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw asset staging folders (production assets are bundled in public/)
+Edited images/
+Edited images
+My pictures/
+My pictures
+new certificates/
+new certificates
+new certificate/
+new certificate

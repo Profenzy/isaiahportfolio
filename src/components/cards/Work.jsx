@@ -1,89 +1,87 @@
 import Card from "./Card";
-import WorkIcon from "../../assets/icons/icon-work.svg";
 import { useState } from "react";
 import ViewAllModal from "../ViewAllModal";
+import { LayersIcon, ArrowUpRightIcon } from "../icons/Icons";
 
 function Work() {
   const [showAllWork, setShowAllWork] = useState(false);
 
-  const workList = [
+  const clientHighlights = [
     {
-      role: "Freelance / Academic Developer",
-      company: "Various Projects",
-      desc: "Developed multiple academic and freelance systems including monitoring tools, games, and embedded system projects.",
+      role: "SMM, Content Editor & GHL Automation Specialist",
+      company: "Tanya Memme",
+      badge: "GHL & Media",
+      badgeColor: "border-amber-500/30 text-amber-300 bg-amber-500/10",
+      desc: "Engineered GoHighLevel / Firestarter lead funnels, edited high-converting carousels, video reels, and brand assets.",
     },
     {
-      role: "System Developer (Student Projects)",
-      company: "University Projects",
-      desc: "Built full-stack systems, productivity tools, and UI-based applications using modern frameworks and technologies.",
+      role: "GHL Architect & Private Data Portal Developer",
+      company: "Trixy Castro • Success Unlocked • La Escuela Nueva",
+      badge: "CRM & Systems",
+      badgeColor: "border-teal-500/30 text-teal-300 bg-teal-500/10",
+      desc: "Managed multi-client GHL infrastructure, automated sales outreach pipelines, and developed custom private portals for data viewing.",
     },
     {
-      role: "Social Media Manager",
+      role: "Social Media Manager & Video Editor",
       company: "Kubo ni Lola Cafe",
-      desc: "Managed social media accounts for personal and professional brands, creating content and engaging with followers.",
+      badge: "Short-Form Video",
+      badgeColor: "border-pink-500/30 text-pink-300 bg-pink-500/10",
+      desc: "Spearheaded TikTok social campaigns, documentary story video edits, trending reels, and community growth.",
     },
     {
-      role: "Graphics Designer",
-      company: "Emerge Creatives",
-      desc: "Created graphics for social media and personal branding, including logos, banners, and other visual content.",
+      role: "Full-Stack System Developer",
+      company: "Freelance & Enterprise Projects",
+      badge: "Full-Stack",
+      badgeColor: "border-purple-500/30 text-purple-300 bg-purple-500/10",
+      desc: "Architected AI-powered productivity tracking desktop software (ProTrack), Arduino robotics, and full-stack web applications.",
     },
   ];
+
   return (
     <Card 
-      title="Work Experience" 
-      icon={<img src={WorkIcon} className="w-5 h-5" alt="" />}
+      title="Client Experience & Systems" 
+      icon={<LayersIcon className="w-5 h-5 text-teal-400" />}
+      accent="teal"
       action={
-        <button onClick={() => setShowAllWork(true)}>
-          View All
+        <button 
+          onClick={() => setShowAllWork(true)}
+          className="flex items-center gap-1 hover:text-teal-400 transition"
+        >
+          <span>View All</span>
+          <ArrowUpRightIcon className="w-3.5 h-3.5" />
         </button>
       }
     >
-      <div className="space-y-4 text-sm text-gray-600">
-        <div>
-          <p className="font-medium text-gray-800">
-            Freelance / Academic Projects
-          </p>
-          <p>
-            Developed web and system-based projects using modern tools and
-            best practices. Focused on clean UI, usability, and functionality.
-          </p>
-        </div>
-
-        <div>
-          <p className="font-medium text-gray-800">
-            Student Developer
-          </p>
-          <p>
-            Worked on software engineering and thesis-related systems including
-            activity tracking and monitoring solutions.
-          </p>
-        </div>
-
-        <div>
-          <p className="font-medium text-gray-800">
-            Social Media
-          </p>
-          <p>
-            Managed social media accounts for personal and professional brands, 
-            creating content and engaging with followers.
-          </p>
-        </div>
-
-        <div>
-          <p className="font-medium text-gray-800">
-            Graphics Designer
-          </p>
-          <p>
-            Created graphics for social media and personal branding, 
-            including logos, banners, and other visual content.
-          </p>
-        </div>
+      <div className="space-y-4 text-xs md:text-sm">
+        {clientHighlights.map((work) => (
+          <div 
+            key={work.company}
+            className="p-3.5 rounded-xl bg-[#0e1015]/60 border border-[#232631]/80 hover:border-[#373b49] transition group"
+          >
+            <div className="flex items-start justify-between gap-2 mb-1.5">
+              <div>
+                <p className="font-display font-medium text-[#f5f2eb] text-sm group-hover:text-amber-300 transition">
+                  {work.company}
+                </p>
+                <p className="text-xs text-[#9e9b93]">
+                  {work.role}
+                </p>
+              </div>
+              <span className={`micro-label text-[10px] px-2.5 py-0.5 rounded-full border shrink-0 ${work.badgeColor}`}>
+                {work.badge}
+              </span>
+            </div>
+            <p className="text-xs text-[#8e8b84] leading-relaxed mt-1">
+              {work.desc}
+            </p>
+          </div>
+        ))}
       </div>
 
       {showAllWork && (
         <ViewAllModal
-          title="Work Experience"
-          items={workList}
+          title="All Experience & Client Case Studies"
+          items={clientHighlights}
           type="work"
           onClose={() => setShowAllWork(false)}
         />
